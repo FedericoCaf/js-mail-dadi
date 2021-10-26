@@ -1,0 +1,22 @@
+body{
+  background-color:lightsteelblue;
+}
+
+.imgEsito{
+  height: 400px;
+  text-align: center;
+}
+
+.imgEsito img{
+  height: 100%;
+}
+
+.dado-utente, .dado-cpu{
+  height: 300px;
+  width: 50%;
+  border: 2px solid black;
+}
+
+
+
+
