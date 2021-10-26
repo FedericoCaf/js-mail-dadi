@@ -1,7 +1,7 @@
 const archivioEmail = ['marcorossi@gmail.com', 'gianlucaverdi@gmail.com', 'federicogialli@gmail.com', 'alessandrabianchi@yahoo.it', 'barbaracelestini@libero.it', 'francescototti@gmail.com', 'lorenzoinsigne@yahoo.com', 'robertobaggio@gmail.com', 'diegoarmandomaradona@gmail.com', 'fabiocannavaro@yahoo.com']
 
-// let emailUtente = prompt('Per favore inserisci la tua email');
-let emailUtente = 'robertobaggio@gmail.com';
+let emailUtente = prompt('Per favore inserisci la tua email');
+// let emailUtente = 'robertobaggio@gmail.com';
 let emailTrovata = false;
 const esito = document.getElementById('messaggio');
 // const imgEsito = document.getElementById('imgEsito');
