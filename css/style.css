@@ -12,11 +12,24 @@ body{
 }
 
 .dado-utente, .dado-cpu{
-  height: 300px;
+  margin-top: 50px;
+  text-align: center;
   width: 50%;
-  border: 2px solid black;
+  /* border: 2px solid black; */
 }
 
+.cursor-none{
+  cursor:default;
+}
 
+.dado-utente h2, .dado-cpu h2{
+  font-size: 50px;
+}
+
+.fc-result{
+  width: 50%;
+  height: 200px;
+  margin: 50px auto;
+}
 
 

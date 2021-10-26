@@ -6,6 +6,7 @@ let emailTrovata = false;
 const esito = document.getElementById('messaggio');
 // const imgEsito = document.getElementById('imgEsito');
 const row = document.querySelector('.row');
+const containerDadi = document.querySelector('.container-dadi');
 
 console.log(archivioEmail[9]);
 
@@ -26,16 +27,73 @@ if(emailTrovata){
 let dadoUtente = document.createElement('div');
 dadoUtente.className = 'dado-utente';
 row.append(dadoUtente);
+dadoUtente.innerHTML = 
+`
+<div class="btn btn-primary">
+LANCIA IL DADO</div>
+`
+
+let numUtente = document.createElement('div');
+let numCPU = document.createElement('div');
+numUtente.className = 'dado-utente';
+containerDadi.append(numUtente);
+
+const buttonDado = document.querySelector('.btn-primary');
+buttonDado.addEventListener('click', function(){
+  let numeroUtente = Math.floor((Math.random()*6 + 1));
+
+  numUtente.innerHTML = 
+  `
+  <h2 class="text-center">
+   ${numeroUtente}
+  </h2>
+  `
+
+  numCPU.className = 'dado-cpu';
+  containerDadi.append(numCPU);
+  
+    let numeroCPU = Math.floor((Math.random()*6 + 1));
+  
+    numCPU.innerHTML = 
+    `
+    <h2 class="text-center">
+     ${numeroCPU}
+    </h2>
+    `
+
+    let resultPartita = document.querySelector('.fc-result');
+   if(numeroUtente > numeroCPU) resultPartita.innerHTML = ` <h4>HAI VINTO</h4>`;
+
+
+   if(numeroUtente < numeroCPU) resultPartita.innerHTML = ` <h4>HAI PERSO</h4>`;
+   if(numeroUtente == numeroCPU) resultPartita.innerHTML = ` <h4>PAREGGIO</h4>`;
+   
+
+
+    
+
+console.log(resultPartita);
+
+  
+}
+
+);
+
+
+// FINE PRIMO DADO
+
 
 let dadoCPU = document.createElement('div');
 dadoCPU.className = 'dado-cpu';
 row.append(dadoCPU);
 
-let numeroUtente = Math.floor((Math.random()*6 + 1));
-console.log(numeroUtente);
+dadoCPU.innerHTML =
+`
+<div class="btn btn-warning cursor-none">
+LANCIO CPU</div>
+`
 
-let numeroCPU = Math.floor((Math.random()*6 + 1));
-console.log(numeroCPU);
+
 
 }
 
