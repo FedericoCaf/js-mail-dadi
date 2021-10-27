@@ -38,6 +38,9 @@ let numCPU = document.createElement('div');
 numUtente.className = 'dado-utente';
 containerDadi.append(numUtente);
 
+let totWinUtente= 0;
+let totWinCPU= 0;
+
 const buttonDado = document.querySelector('.btn-primary');
 buttonDado.addEventListener('click', function(){
   let numeroUtente = Math.floor((Math.random()*6 + 1));
@@ -62,11 +65,27 @@ buttonDado.addEventListener('click', function(){
     `
 
     let resultPartita = document.querySelector('.fc-result');
-   if(numeroUtente > numeroCPU) resultPartita.innerHTML = ` <h4>HAI VINTO</h4>`;
+    
+    // let totWinCPU = 0;
+   if(numeroUtente > numeroCPU) {
+     resultPartita.innerHTML = ` <h4>HAI VINTO</h4>`;
+     totWinUtente = totWinUtente + 1;
+     console.log(totWinUtente);
+    }
+
+   if(numeroUtente < numeroCPU){
+      resultPartita.innerHTML = ` <h4>HAI PERSO</h4>`;
+      totWinCPU = totWinCPU + 1;
+  
+   } 
 
 
-   if(numeroUtente < numeroCPU) resultPartita.innerHTML = ` <h4>HAI PERSO</h4>`;
    if(numeroUtente == numeroCPU) resultPartita.innerHTML = ` <h4>PAREGGIO</h4>`;
+
+    numUtente.append(totWinUtente);
+    numCPU.append(totWinCPU);
+
+
    
 
 
